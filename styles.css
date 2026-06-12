@@ -832,11 +832,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  min-width: 0;
 }
 
 .consult-right {
   display: flex;
   align-items: stretch;
+  min-width: 0;
 }
 
 .consult-card {
@@ -1037,6 +1039,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .footer-brand-col { grid-column: 1 / -1; }
   .hero-content { grid-template-columns: 1fr; gap: 0; }
   .hero-visual { display: none; }
+  .consultation-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .consult-left { align-items: flex-start; }
 }
 
 @media (max-width: 768px) {
@@ -1068,7 +1072,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   }
   .section-header-split .section-desc { margin: 0 auto; }
 
-  .consultation-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .consult-left { align-items: center; text-align: center; }
   .consult-features { flex-direction: column; align-items: center; }
 
@@ -1083,6 +1086,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .services { padding: 4rem 0; }
   .about { padding: 4rem 0; }
   .consultation { padding: 4rem 0; }
+  .consult-card { padding: 1.25rem; }
+  .consult-card .btn-large { white-space: normal; text-align: center; }
 }
 
 /* ===== ANIMATIONS ===== */
