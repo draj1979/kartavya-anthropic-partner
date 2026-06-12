@@ -518,6 +518,22 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .section-header .section-desc { margin: 0 auto; }
 
+.section-header-split {
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+}
+
+.section-header-split .section-desc { margin: 0; }
+
+.section-header-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -780,7 +796,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: 6rem 0;
   background: var(--bg-primary);
   overflow: hidden;
-  text-align: center;
   border-top: 1px solid var(--border);
 }
 
@@ -807,9 +822,44 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .consultation-inner {
   position: relative;
   z-index: 1;
-  max-width: 600px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
 }
+
+.consult-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.consult-right {
+  display: flex;
+  align-items: stretch;
+}
+
+.consult-card {
+  width: 100%;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.consult-card .consult-features {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.875rem;
+  margin-bottom: 0;
+}
+
+.consult-card .btn-large { width: 100%; justify-content: center; }
+
+.consult-card .consult-note { margin-top: 0; text-align: center; }
 
 .consult-badge {
   display: inline-block;
@@ -1011,9 +1061,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .stat-divider { display: none; }
   .stat-item { padding: 0.75rem 1.5rem; }
 
+  .section-header-split {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+  .section-header-split .section-desc { margin: 0 auto; }
+
+  .consultation-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .consult-left { align-items: center; text-align: center; }
+  .consult-features { flex-direction: column; align-items: center; }
+
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom-inner { flex-direction: column; text-align: center; }
-  .consult-features { flex-direction: column; align-items: center; }
 }
 
 @media (max-width: 480px) {
