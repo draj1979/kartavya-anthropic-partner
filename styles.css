@@ -264,7 +264,85 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 760px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hero-visual-inner {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.hero-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.875rem;
+}
+
+.hero-service-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.hero-service-card:hover {
+  border-color: var(--accent-border);
+  box-shadow: 0 0 24px rgba(59, 130, 246, 0.08);
+}
+
+.hero-service-card .service-icon-wrap {
+  width: 36px;
+  height: 36px;
+}
+
+.hero-service-card h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.hero-service-card p {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.hero-partner-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.75rem 1rem;
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #93c5fd;
+  white-space: nowrap;
 }
 
 .partner-badge {
@@ -907,6 +985,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .about-image-col { position: static; max-width: 300px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
   .footer-brand-col { grid-column: 1 / -1; }
+  .hero-content { grid-template-columns: 1fr; gap: 0; }
+  .hero-visual { display: none; }
 }
 
 @media (max-width: 768px) {
